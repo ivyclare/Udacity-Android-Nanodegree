@@ -9,10 +9,6 @@
     <string name="popular">Most Popular</string>
     <string name="rates">Highest Rated</string>
 
-    <string name="api">1b9c7386849e73058df501d08dd50a6a</string>
-    <string name="pop_url">http://api.themoviedb.org/3/movie/popular?api_key=1b9c7386849e73058df501d08dd50a6a</string>
-    <string name="high_rate_url">http://api.themoviedb.org/3/movie/top_rated?api_key=1b9c7386849e73058df501d08dd50a6a</string>
-    <string name="url">https://image.tmdb.org/t/p/w185_and_h278_bestv2</string>
-    <string name="tag">Tag</string>
+
 
 </resources>

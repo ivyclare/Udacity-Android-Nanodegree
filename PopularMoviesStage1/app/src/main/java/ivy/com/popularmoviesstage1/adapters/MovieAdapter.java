@@ -11,10 +11,9 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import ivy.com.popularmoviesstage1.R;
-import ivy.com.popularmoviesstage1.util.Movie;
+import ivy.com.popularmoviesstage1.model.Movie;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
 

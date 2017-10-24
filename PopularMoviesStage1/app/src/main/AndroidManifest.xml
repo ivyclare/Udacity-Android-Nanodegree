@@ -19,7 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MovieDetailActivity"></activity>
+        <activity android:name=".MovieDetailActivity" />
+        <activity android:name=".FavoriteActivity"></activity>
+
+        <provider
+            android:name="ivy.com.popularmoviesstage1.data.FavoriteProvider"
+            android:authorities="@string/authority"
+            android:exported="false"/>
     </application>
 
 </manifest>

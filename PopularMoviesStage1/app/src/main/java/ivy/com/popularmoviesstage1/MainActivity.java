@@ -14,7 +14,6 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -32,10 +31,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
 import ivy.com.popularmoviesstage1.adapters.MovieAdapter;
-import ivy.com.popularmoviesstage1.util.Movie;
+import ivy.com.popularmoviesstage1.model.Movie;
 import ivy.com.popularmoviesstage1.util.Utils;
 
 // First activity that appears, shows list of movies
@@ -256,6 +254,10 @@ public class MainActivity extends AppCompatActivity {
             GetSpecificUrl(Utils.URL_POP);
         } else if (id == R.id.menuSortRating) {
             GetSpecificUrl(Utils.URL_RATED);
+        }else if (id == R.id.menuSortFav) {
+            //Fill list here
+            Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

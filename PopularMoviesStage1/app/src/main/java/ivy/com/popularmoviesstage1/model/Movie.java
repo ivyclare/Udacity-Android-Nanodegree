@@ -1,4 +1,4 @@
-package ivy.com.popularmoviesstage1.util;
+package ivy.com.popularmoviesstage1.model;
 
 public class Movie {
     private String image;

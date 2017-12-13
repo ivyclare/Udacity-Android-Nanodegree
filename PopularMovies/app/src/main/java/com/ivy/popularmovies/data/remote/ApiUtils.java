@@ -5,7 +5,7 @@ package com.ivy.popularmovies.data.remote;
  */
 public class ApiUtils {
 
-    public static final String API_KEY = "1b9c7386849e73058df501d08dd50a6a";
+    public static final String API_KEY = "[YOUR_API_KEY]";
     public static final String IMAGE_URL = "http://image.tmdb.org/t/p";
     public static final String BASE_URL = "http://api.themoviedb.org";
 

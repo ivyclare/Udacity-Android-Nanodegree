@@ -2,12 +2,14 @@ package com.ivy.bakingapp.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.ivy.bakingapp.Listeners.RecyclerClickListener;
 import com.ivy.bakingapp.R;
@@ -29,9 +31,14 @@ public class StepsFragment extends Fragment {
 
     private StepAdapter StepAdapter;
     private int currentStepIndex;
+    private RecipeModel recipeModel;
 
     @BindView(R.id.steps_recycler)
     RecyclerView StepRecyclerView;
+
+    @Nullable
+    @BindView(R.id.view_ingredients)
+    TextView ViewIngredients;
 
     /**
      * Use this factory method to create a new instance of
@@ -41,10 +48,12 @@ public class StepsFragment extends Fragment {
      * @return A new instance of fragment StepsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static StepsFragment newInstance(ArrayList<StepModel> steps) {
+    public static StepsFragment newInstance(RecipeModel recipe ) {
+        ArrayList<StepModel> steps = recipe.getSteps();
         StepsFragment fragment = new StepsFragment();
         Bundle args = new Bundle();
         args.putParcelableArrayList("steps", steps);
+        args.putParcelable("recipe", recipe);
         fragment.setArguments(args);
         return fragment;
     }
@@ -72,6 +81,24 @@ public class StepsFragment extends Fragment {
             }
         }));
 
+        if (view.findViewById(R.id.view_ingredients) != null) {
+            ViewIngredients.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    recipeModel = getArguments().getParcelable("recipe");
+                    System.out.println("VIEW INGREDIENTS HAS BEEN CLICKED");
+                    recipeModel = getArguments().getParcelable("recipe");
+                    //StepsFragment.newInstance(recipeModel);
+                    getActivity().setTitle("Ingredients");
+                    IngredientsFragment fragment = IngredientsFragment.newInstance(recipeModel);
+                    //fragment.setArguments(arguments);
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.recipe_detail_container, fragment)
+                            .commit();
+                }
+            });
+
+        }
         return view;
     }
 

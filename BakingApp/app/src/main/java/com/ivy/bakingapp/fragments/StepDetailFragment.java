@@ -73,6 +73,11 @@ public class StepDetailFragment extends Fragment implements ExoPlayer.EventListe
     private PlaybackStateCompat.Builder mStateBuilder;
     private String videoUrl;
     private long currentVideoPosition;
+    private long mResumePosition=0;
+
+    private final String STATE_RESUME_WINDOW = "resumeWindow";
+    private final String STATE_RESUME_POSITION = "resumePosition";
+
 
     public StepDetailFragment() {
         // Required empty public constructor
@@ -104,6 +109,10 @@ public class StepDetailFragment extends Fragment implements ExoPlayer.EventListe
         Log.v("OnCreateView", "TRUE");
         View view = inflater.inflate(R.layout.fragment_step_detail, container, false);
         ButterKnife.bind(this, view);
+
+        if (savedInstanceState != null) {
+            mResumePosition = savedInstanceState.getLong(STATE_RESUME_POSITION);
+        }
 
         if (getArguments() != null) {
             step = getArguments().getParcelable("step");
@@ -163,10 +172,30 @@ public class StepDetailFragment extends Fragment implements ExoPlayer.EventListe
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+
+        if(mExoPlayer!=null) {
+            mResumePosition = Math.max(0, mExoPlayer.getCurrentPosition());
+            outState.putLong(STATE_RESUME_POSITION, mResumePosition);
+            super.onSaveInstanceState(outState);
+        }
+    }
+
+    @Override
     public void onPause() {
+//        super.onPause();
+//        mResumePosition = mExoPlayer.getCurrentPosition();
+//        releasePlayer();
         super.onPause();
-       // currentVideoPosition = mExoPlayer.getCurrentPosition();
-        releasePlayer();
+        if (mExoPlayer != null) {
+            System.out.println("EXOPLAYER IS NOT NULL IN ONPAUSE");
+            mResumePosition = mExoPlayer.getCurrentPosition();
+            System.out.println("CURrENT POSITION"+ mResumePosition);
+            releasePlayer();
+//            mExoPlayer.stop();
+//            mExoPlayer.release();
+//            mExoPlayer = null;
+        }
     }
 
     @Override

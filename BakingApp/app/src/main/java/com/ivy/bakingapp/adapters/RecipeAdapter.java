@@ -61,8 +61,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
 
         //String imageURL = ApiUtils.IMAGE_URL+"/w342" + data.get(position).getPosterPath() + "?api_key?=" + ApiUtils.API_KEY;
         String imageURL = data.get(position).getImage();
-        System.out.println("THE NAME  URL IS "+data.get(position).getName());
-        System.out.println("THE IMAGE URL IS "+imageURL);
 
         if(imageURL.equals("")){
             Picasso.with(context).load(R.drawable.food_placeholder).error(R.drawable.food_placeholder).into(((MyViewHolder) holder).thumbnail,
@@ -98,12 +96,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.MyViewHold
     @Override
     public int getItemCount() {
         return data.size();
-    }
-
-
-    public void addAll(ArrayList<RecipeModel> list){
-        for (int i = 0; i < list.size(); i++)
-            data.add(list.get(i));
     }
 
 }

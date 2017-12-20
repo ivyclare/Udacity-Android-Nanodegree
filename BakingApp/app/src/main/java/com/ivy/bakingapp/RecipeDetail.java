@@ -4,6 +4,7 @@ import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -22,6 +23,9 @@ import android.widget.TextView;
 import com.ivy.bakingapp.data.model.RecipeModel;
 import com.ivy.bakingapp.fragments.IngredientsFragment;
 import com.ivy.bakingapp.fragments.StepsFragment;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class RecipeDetail extends AppCompatActivity {
 
@@ -50,7 +54,9 @@ public class RecipeDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_detail2);
+        setContentView(R.layout.activity_recipe_detail);
+
+        ButterKnife.bind(this);
 
         //Getting recipe content from intent
         if (getIntent() != null && getIntent().hasExtra("recipe")) {
@@ -70,6 +76,7 @@ public class RecipeDetail extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
     }
 
 
@@ -146,9 +153,9 @@ public class RecipeDetail extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return IngredientsFragment.newInstance(recipe.getIngredients());
+                    return IngredientsFragment.newInstance(recipe);
                 case 1:
-                    return StepsFragment.newInstance(recipe.getSteps());
+                    return StepsFragment.newInstance(recipe);
 
             }
             return null;

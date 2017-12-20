@@ -9,4 +9,22 @@
         android:id="@+id/steps_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/view_ingredients"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:drawableLeft="@drawable/ic_chevron_left_black_24dp"
+        android:drawableStart="@drawable/ic_chevron_left_black_24dp"
+        android:ellipsize="end"
+        android:foreground="?android:selectableItemBackground"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:text="@string/view_ingred" />
+    <!--android:visibility="gone"-->
 </FrameLayout>

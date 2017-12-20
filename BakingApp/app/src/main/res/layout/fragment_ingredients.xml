@@ -9,4 +9,21 @@
         android:id="@+id/ingred_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/view_directions"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
+        android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+        android:ellipsize="end"
+        android:foreground="?android:selectableItemBackground"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:text="@string/view_directions" />
 </FrameLayout>

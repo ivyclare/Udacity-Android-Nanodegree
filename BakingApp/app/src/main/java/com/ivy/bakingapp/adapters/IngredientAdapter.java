@@ -29,8 +29,6 @@ public class IngredientAdapter extends RecyclerView.Adapter<IngredientAdapter.My
     private ArrayList<IngredientModel> ingredients = new ArrayList<>();
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        //        public TextView title;
-//        public ImageView thumbnail;
         @BindView(R.id.ingredient_name)
         TextView ingredient_name;
         @BindView(R.id.quantity)

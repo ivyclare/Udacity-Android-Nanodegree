@@ -3,6 +3,7 @@ package com.ivy.bakingapp.fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ivy.bakingapp.R;
+import com.ivy.bakingapp.RecipeListActivity;
 import com.ivy.bakingapp.adapters.IngredientAdapter;
 import com.ivy.bakingapp.data.model.IngredientModel;
 import com.ivy.bakingapp.data.model.RecipeModel;
@@ -23,14 +25,19 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Optional;
 
 public class IngredientsFragment extends Fragment {
 
     private IngredientAdapter IngredientAdapter;
+    private RecipeModel recipeModel;
 
     @BindView(R.id.ingred_recycler)
     RecyclerView IngredientRecyclerView;
 
+    @Nullable
+    @BindView(R.id.view_directions)
+    TextView ViewDirections;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -39,9 +46,11 @@ public class IngredientsFragment extends Fragment {
      * @return A new instance of fragment IngredientsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static IngredientsFragment newInstance(ArrayList<IngredientModel> ingredients) {
+    public static IngredientsFragment newInstance(RecipeModel recipe) {
+        ArrayList<IngredientModel> ingredients = recipe.getIngredients();
         IngredientsFragment fragment = new IngredientsFragment();
         Bundle args = new Bundle();
+        args.putParcelable("recipe", recipe);
         args.putParcelableArrayList("ingredients", ingredients);
         fragment.setArguments(args);
         return fragment;
@@ -55,6 +64,24 @@ public class IngredientsFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         setupRecyclerView();
+
+
+        if (view.findViewById(R.id.view_directions) != null) {
+            ViewDirections.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    System.out.println("VIEW DIRECTIONS HAS BEEN CLICKED");
+                    recipeModel = getArguments().getParcelable("recipe");
+                    //StepsFragment.newInstance(recipeModel);
+                    getActivity().setTitle("Directions");
+                    StepsFragment fragment = StepsFragment.newInstance(recipeModel);
+                    //fragment.setArguments(arguments);
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.recipe_detail_container, fragment)
+                            .commit();
+                }
+            });
+        }
 
         return view;
     }
@@ -70,27 +97,12 @@ public class IngredientsFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         IngredientRecyclerView.setLayoutManager(layoutManager);
         IngredientRecyclerView.addItemDecoration(decoration);
+
         ArrayList<IngredientModel> ingredients = getArguments().getParcelableArrayList("ingredients");
 
         IngredientAdapter = new IngredientAdapter(getContext(),ingredients);
 
         IngredientRecyclerView.setAdapter(IngredientAdapter);
-
-        //Sending the ingredient details to the widget
-
-//        ArrayList<String> recipeIngredientsForWidgets= new ArrayList<>();
-//
-//
-//        ingredients.forEach((a) ->
-//        {
-//            textView.append("\u2022 "+ a.getIngredient()+"\n");
-//            textView.append("\t\t\t Quantity: "+a.getQuantity().toString()+"\n");
-//            textView.append("\t\t\t Measure: "+a.getMeasure()+"\n\n");
-//
-//            recipeIngredientsForWidgets.add(a.getIngredient()+"\n"+
-//                    "Quantity: "+a.getQuantity().toString()+"\n"+
-//                    "Measure: "+a.getMeasure()+"\n");
-//        });
     }
 
 

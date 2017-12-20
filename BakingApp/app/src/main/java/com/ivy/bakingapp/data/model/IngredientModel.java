@@ -58,9 +58,6 @@ public class IngredientModel implements Parcelable
      * @param quantity
      */
 
-
-
-
     public IngredientModel(Double quantity, String measure, String ingredient) {
         super();
         this.quantity = quantity;

@@ -10,6 +10,10 @@
     <string name="no_recipe">Show Recipe</string>
     <string name="next_step">Next Step</string>
     <string name="prev_step">Previous Step</string>
+    <string name="view_directions">VIEW DIRECTIONS</string>
+    <string name="view_ingred">VIEW INGREDIENTS</string>
+
+
 
     <string name="no_internet"> Please Check your Internet Connection</string>
 

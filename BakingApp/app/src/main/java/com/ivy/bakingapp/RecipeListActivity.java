@@ -33,11 +33,14 @@ import android.widget.Toast;
 
 
 import com.ivy.bakingapp.Listeners.RecyclerClickListener;
+import com.ivy.bakingapp.data.model.IngredientModel;
 import com.ivy.bakingapp.data.model.RecipeModel;
+import com.ivy.bakingapp.data.model.StepModel;
 import com.ivy.bakingapp.data.remote.ApiUtils;
 import com.ivy.bakingapp.data.remote.RecipeService;
 import com.ivy.bakingapp.adapters.RecipeAdapter;
 import com.ivy.bakingapp.fragments.IngredientsFragment;
+import com.ivy.bakingapp.fragments.StepsFragment;
 import com.ivy.bakingapp.idlingresource.SimpleIdlingResource;
 
 import java.util.ArrayList;
@@ -68,16 +71,14 @@ public class RecipeListActivity extends AppCompatActivity {
     Toolbar toolbar;
     @BindView(R.id.recipe_list)
     RecyclerView recyclerView;
-//    @BindView(R.id.recipe_detail_container)
-//    NestedScrollView nestedScrollView;
-    //@BindView(R.id.progressBar)
     public static ProgressBar progressBar;
     GridLayoutManager mLayoutManager;
 
     ArrayList<RecipeModel> recipeList;
     RecipeAdapter recipeAdapter;
     private RecipeService mService;
-    private boolean mTwoPane;
+    private boolean mTwoPane,mIsResumed;
+    boolean isTablet;
 
     @Nullable
     private SimpleIdlingResource mIdlingResource;
@@ -101,6 +102,7 @@ public class RecipeListActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        isTablet = getResources().getBoolean(R.bool.isTablet);
         mService = ApiUtils.getRecipeService();
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -134,16 +136,26 @@ public class RecipeListActivity extends AppCompatActivity {
         recyclerView.addOnItemTouchListener(new RecyclerClickListener(this, new RecyclerClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                RecipeModel recipeModel  = recipeList.get(position);
+                               RecipeModel recipeModel  = recipeList.get(position);
+                ArrayList<StepModel> steps = recipeModel.getSteps();
+                ArrayList<IngredientModel> ingredients = recipeModel.getIngredients();
 
                 if (mTwoPane) {
-                        Bundle arguments = new Bundle();
-                        arguments.putParcelable("recipe", recipeModel);
-                        IngredientsFragment fragment = new IngredientsFragment();
-                        fragment.setArguments(arguments);
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.recipe_detail_container, fragment)
-                                .commit();
+                    Bundle arguments = new Bundle();
+                    arguments.putParcelable("recipe", recipeModel);
+                    arguments.putParcelableArrayList("steps", steps);
+                    arguments.putParcelableArrayList("ingredients", ingredients);
+
+                    System.out.println("ENTERS ON ITEM TOUCH LISTENER");
+                    IngredientsFragment fragment = IngredientsFragment.newInstance(recipeModel);
+                    fragment.setArguments(arguments);
+
+                    StepsFragment stepfragment = new StepsFragment();
+                    stepfragment.setArguments(arguments);
+
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.recipe_detail_container, fragment)
+                            .commit();
                     } else {
                         Intent intents = new Intent(getApplicationContext(), RecipeDetail.class);
                         intents.putExtra("recipe", recipeModel);
@@ -162,20 +174,42 @@ public class RecipeListActivity extends AppCompatActivity {
 
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            mLayoutManager.setSpanCount(1);
-            recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        if(isTablet){
+
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                mLayoutManager.setSpanCount(2);
+                recyclerView.addItemDecoration(new GridSpacingItemDecoration(3, dpToPx(10), true));
+            } else {
+                mLayoutManager.setSpanCount(1);
+                recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+            }
         }else {
-            mLayoutManager.setSpanCount(2);
-            recyclerView.addItemDecoration(new GridSpacingItemDecoration(3, dpToPx(10), true));
+
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                mLayoutManager.setSpanCount(1);
+                recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+            } else {
+                mLayoutManager.setSpanCount(2);
+                recyclerView.addItemDecoration(new GridSpacingItemDecoration(3, dpToPx(10), true));
+            }
         }
 
         recyclerView.setAdapter(recipeAdapter);
 
         recyclerView.setLayoutManager(mLayoutManager);
-        //recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(DummyContent.ITEMS));
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mIsResumed = true;
+    }
+
+    @Override
+    public void onPause() {
+        mIsResumed = false;
+        super.onPause();
+    }
     //Asynctask to get recipe data
     private class GetRecipes extends AsyncTask<Void, Void,
             List<RecipeModel>> {
@@ -192,8 +226,6 @@ public class RecipeListActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<List<RecipeModel>> call, Response<List<RecipeModel>> response) {
 
-                    System.out.println("ENTERS INSIDE THE ONRESPONSE PAGE");
-                    System.out.println("****RESPONSE"+response.message());
                     Log.d("****RESPONSE",response.message());
 
                     if(response.isSuccessful()) {
@@ -204,31 +236,44 @@ public class RecipeListActivity extends AppCompatActivity {
                             }
                             recipeAdapter.notifyDataSetChanged();
                         if (mTwoPane && recipeList.size()!=0) {
+
+                            RecipeModel recipeModel  = recipeList.get(0);
                             Bundle arguments = new Bundle();
                             arguments.putParcelable("recipe", recipeList.get(0));
-                            IngredientsFragment fragment = new IngredientsFragment();
+
+                            ArrayList<StepModel> steps = recipeModel.getSteps();
+                            ArrayList<IngredientModel> ingredients = recipeModel.getIngredients();
+
+
+                            arguments.putParcelable("recipe", recipeModel);
+                            arguments.putParcelableArrayList("steps", steps);
+                            arguments.putParcelableArrayList("ingredients", ingredients);
+
+                            IngredientsFragment fragment = IngredientsFragment.newInstance(recipeModel);
+                            fragment.setArguments(arguments);
+
+                            StepsFragment stepfragment = new StepsFragment();
+                            stepfragment.setArguments(arguments);
+
+
+                            //IngredientsFragment fragment = new IngredientsFragment();
                             fragment.setArguments(arguments);
                             getSupportFragmentManager().beginTransaction()
                                     .replace(R.id.recipe_detail_container, fragment)
                                     .commit();
+
                         }
 
                         Log.d("MainActivity", "posts loaded from API");
                     }else {
                         int statusCode  = response.code();
                         // handle request errors depending on status code
-
-                        System.out.println("ENTERS INSIDE THE ON RESPONSE PAGESSS");
-                        System.out.println("****RESPONSE IS MESSAGEEE "+response.message());
-                        Log.d("****RESPONSESS",response.message());
                     }
                 }
 
                 @Override
                 public void onFailure(Call<List<RecipeModel>> call, Throwable t) {
                     //showErrorMessage();
-                    System.out.println("ENTERS INSIDE THE ON FAILURE PAGESSS");
-                    Toast.makeText(getApplicationContext(),"Error while loading Recipes",Toast.LENGTH_LONG).show();
                     // Very important for debugging
                     Log.d("ERRORRRRR", t.getMessage());
                     t.printStackTrace();

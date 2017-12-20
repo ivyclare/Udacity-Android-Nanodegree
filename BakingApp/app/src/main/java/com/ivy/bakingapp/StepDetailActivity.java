@@ -67,6 +67,8 @@ public class StepDetailActivity extends AppCompatActivity {
     TextView tvPreviousStep;
     @BindView(R.id.tv_next_step)
     TextView tvNextStep;
+    @BindView(R.id.v_horizontal)
+    View vHorizontal;
     @BindView(R.id.ll_step_navigation)
     LinearLayout llStepNavigation;
 
@@ -115,29 +117,29 @@ public class StepDetailActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-//    @Override
-//    public void onWindowFocusChanged(boolean hasFocus) {
-//        super.onWindowFocusChanged(hasFocus);
-//        fragment.setOrientation(orientation);
-//        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//                getWindow().getDecorView().setSystemUiVisibility(
-//                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-//                                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-//                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-//                                | View.SYSTEM_UI_FLAG_FULLSCREEN
-//                                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-//            }
-//            llStepNavigation.setVisibility(View.GONE);
-//            vHorizontal.setVisibility(View.GONE);
-//        } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-//            View decorView = getWindow().getDecorView();
-//            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-//            llStepNavigation.setVisibility(View.VISIBLE);
-//            vHorizontal.setVisibility(View.VISIBLE);
-//        }
-//    }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        fragment.setOrientation(orientation);
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                getWindow().getDecorView().setSystemUiVisibility(
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+            }
+            llStepNavigation.setVisibility(View.GONE);
+            vHorizontal.setVisibility(View.GONE);
+        } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            View decorView = getWindow().getDecorView();
+            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+            llStepNavigation.setVisibility(View.VISIBLE);
+            vHorizontal.setVisibility(View.VISIBLE);
+        }
+    }
 
     private void setNavigationButton(int stepIndex) {
         if (steps.size() > 1) {

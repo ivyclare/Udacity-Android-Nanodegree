@@ -134,12 +134,23 @@ public class StepDetailFragment extends Fragment {
     }
 
 
-
     @Override
     public void onStart() {
         super.onStart();
 
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (Util.SDK_INT <= 23) {
+            releasePlayer();
+        }
     }
 
 
@@ -165,7 +176,7 @@ public class StepDetailFragment extends Fragment {
 
         if (mResumePosition != 0) {
             mExoPlayer.seekTo(mResumePosition);
-            //Toast.makeText(getActivity(),"seek "+mResumePosition, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),"seek "+mResumePosition, Toast.LENGTH_SHORT).show();
         }
 
         mExoPlayer.setPlayWhenReady(true);

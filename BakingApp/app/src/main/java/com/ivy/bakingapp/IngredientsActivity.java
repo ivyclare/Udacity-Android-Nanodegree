@@ -1,10 +1,12 @@
 package com.ivy.bakingapp;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,6 +44,13 @@ public class IngredientsActivity extends AppCompatActivity {
         // Inflate the layout for this fragment
         ButterKnife.bind(this);
 
+        // Show the Up button in the action bar.
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+
         isTablet = getResources().getBoolean(R.bool.isTablet);
 
         if (getIntent() != null && getIntent().hasExtra("recipe")) {
@@ -56,23 +65,9 @@ public class IngredientsActivity extends AppCompatActivity {
         ViewDirections.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-//                if(isTablet){
-//
-//                    StepDetailFragment fragment = new StepDetailFragment();
-//                    Bundle bundle = new Bundle();
-//                    bundle.putString(fragment.VIDEO_URL, StepModel.getVideoURL());
-//                    bundle.putString(fragment.STEP_DETAILS, StepModel.getDescription());
-//                    bundle.putBoolean(fragment.IS_lAND_SCAPE, isLandScape);
-//                    fragment.setArguments(bundle);
-//                    getSupportFragmentManager().beginTransaction()
-//                            .add(R.id.step_detail_container, fragment)
-//                            .commit();
-//                }else {
                     Intent intents = new Intent(getApplicationContext(), StepListActivity.class);
                     intents.putExtra("recipe", recipeModel);
                     startActivity(intents);
-               // }
             }
         });
     }
@@ -89,10 +84,28 @@ public class IngredientsActivity extends AppCompatActivity {
         IngredientRecyclerView.setLayoutManager(layoutManager);
         IngredientRecyclerView.addItemDecoration(decoration);
 
-       // ArrayList<IngredientModel> ingredients = getArguments().getParcelableArrayList("ingredients");
-
         IngredientAdapter = new IngredientAdapter(getApplicationContext(), ingredients);
 
         IngredientRecyclerView.setAdapter(IngredientAdapter);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home: {
+                onBackPressed();
+                return true;
+            }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

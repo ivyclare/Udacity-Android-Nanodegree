@@ -77,6 +77,7 @@ public class StepDetailActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             bundle.putString(fragment.VIDEO_URL, StepModel.getVideoURL());
             bundle.putString(fragment.STEP_DETAILS, StepModel.getDescription());
+            bundle.putString(fragment.THUMBNAIL, StepModel.getThumbnailURL() );
             bundle.putBoolean(fragment.IS_lAND_SCAPE, isLandScape);
             fragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction()

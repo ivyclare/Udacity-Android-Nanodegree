@@ -57,7 +57,8 @@ public class StepDetailFragment extends Fragment {
 
     private final String STATE_RESUME_POSITION = "resumePosition";
 
-    private long mResumePosition=0;
+    private long mResumePosition = 0;
+    private  String url;
 
     public StepDetailFragment(){
 
@@ -79,7 +80,7 @@ public class StepDetailFragment extends Fragment {
             Bundle bundle = this.getArguments();
             if (bundle != null) {
                 textView.setText(bundle.getString(STEP_DETAILS));
-                String url = bundle.getString(VIDEO_URL);
+                 url = bundle.getString(VIDEO_URL);
 
                 if(url!=null &&url.length()>10) {
                     setUpExoPlayer(url);
@@ -88,7 +89,8 @@ public class StepDetailFragment extends Fragment {
                     //check if there is a thumbnail and show
                     mExoPlayerView.setVisibility(View.GONE);
                     String thumbnail= bundle.getString(THUMBNAIL);
-                    if(thumbnail!=null &&thumbnail.length()>10){
+
+                    if(thumbnail!=null && thumbnail.length()>10){
                         //there is a picture, display it
                         img_thumbnail.setVisibility(View.VISIBLE);
 
@@ -97,8 +99,6 @@ public class StepDetailFragment extends Fragment {
                                 .error(android.R.drawable.ic_menu_slideshow)
                                 .placeholder(android.R.drawable.ic_menu_slideshow)
                                 .into(img_thumbnail);
-
-
                     }else{
                         img_thumbnail.setVisibility(View.VISIBLE);
                     }
@@ -143,6 +143,10 @@ public class StepDetailFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        System.out.println("ENTERS ON RESUME*****");
+        if(url!=null &&url.length()>10) {
+            setUpExoPlayer(url);
+        }
     }
 
     @Override
@@ -155,7 +159,6 @@ public class StepDetailFragment extends Fragment {
 
 
     private void setUpExoPlayer(String urlString) {
-
         Handler mainHandler = new Handler();
         BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
         TrackSelection.Factory videoTrackSelectionFactory =

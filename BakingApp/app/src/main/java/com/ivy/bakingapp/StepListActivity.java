@@ -101,6 +101,7 @@ public class StepListActivity extends AppCompatActivity {
                     arguments.putString(fragment.VIDEO_URL, steps.getVideoURL());
                     arguments.putString(fragment.STEP_DETAILS, steps.getDescription());
                     arguments.putBoolean(fragment.IS_lAND_SCAPE, isLandScape);
+                    arguments.putString(fragment.THUMBNAIL, steps.getThumbnailURL() );
 
                     fragment.setArguments(arguments);
 

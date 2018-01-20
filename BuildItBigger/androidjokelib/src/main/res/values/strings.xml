@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">androidJokeLib</string>
+    <string name="missing_joke">Missing Joke</string>
+    <string name="action_settings">Settings</string>
+</resources>

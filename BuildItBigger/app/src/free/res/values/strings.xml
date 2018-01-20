@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Build it Bigger</string>
+    <string name="instructions">Press the button for a delicious joke!</string>
+    <string name="button_text">Tell Free Joke</string>
+    <string name="loading_joke">Loading joke</string>
+    <string name="load_fail">Loading fail</string>
+    <string name="action_settings">Settings</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="gceendpoint">http://10.0.2.2:8080/_ah/api</string>
+</resources>

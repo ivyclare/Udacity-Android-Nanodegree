@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        sign_config {
+            keyAlias 'key0'
+            keyPassword 'password'
+            storeFile file("$rootDir/keystore.jks")
+            storePassword 'password'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.udacity.gradle.builditbigger"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sign_config
+        }
+
+    }
+
+    productFlavors{
+        paid{
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+        free{
+            applicationId "com.udacity.gradle.builditbigger.free"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':javajokelib')
+    compile project(':androidjokelib')
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    freeCompile 'com.google.android.gms:play-services-ads:9.8.0'
+    compile 'com.android.support:support-annotations:22.2.0'
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
+    compile group: 'com.google.api-client', name: 'google-api-client', version: '1.23.0'
+    compile group: 'com.google.api-client', name: 'google-api-client-android', version: '1.23.0'
+    compile project(path: ':backend', configuration: 'android-endpoints')
+    testCompile 'junit:junit:4.12'
+}

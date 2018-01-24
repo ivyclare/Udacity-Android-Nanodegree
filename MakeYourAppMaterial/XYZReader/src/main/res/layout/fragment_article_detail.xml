@@ -21,7 +21,7 @@
             app:expandedTitleMargin="@dimen/padding"
             app:expandedTitleMarginBottom="@dimen/expanded_title_margin_bottom"
             app:expandedTitleTextAppearance="@style/ExpandedTitleTextAppearance"
-            app:layout_scrollFlags="scroll"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
             <FrameLayout
@@ -126,7 +126,7 @@
         android:clickable="true"
         android:contentDescription="@string/action_share"
         android:src="@android:drawable/ic_menu_share"
-        app:elevation="@dimen/card_margin"
+        app:elevation="6dp"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end" />
 

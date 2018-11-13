@@ -30,9 +30,9 @@ In this project you will:
   <img src="pics/Screenshot_20181112-202842.png" width="425" /> 
 </p>
 <p align="center">
-  <img src="pics/Screenshot_20181112-202943.png" width="325" /> 
+  <img src="pics/Screenshot_20181112-202943.png" width="525" /> 
 </p>
 <p align="center">
-  <img src="pics/Screenshot_20181112-203003.png" width="325" /> 
+  <img src="pics/Screenshot_20181112-203003.png" width="525" /> 
 </p>
 

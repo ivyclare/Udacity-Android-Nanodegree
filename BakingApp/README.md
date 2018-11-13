@@ -21,3 +21,18 @@ In this project you will:
 - Exoplayer
 - Espresso
 - ButterKnife
+
+## ScreenShots
+<p float="left">
+  <img src="pics/Screenshot_20181112-202817.png" width="425" />
+  <img src="pics/Screenshot_20181112-202826.png" width="425" /> 
+  <img src="pics/Screenshot_20181112-202834.png" width="425" />
+  <img src="pics/Screenshot_20181112-202842.png" width="425" /> 
+</p>
+<p align="center">
+  <img src="pics/Screenshot_20181112-202943.png" width="325" /> 
+</p>
+<p align="center">
+  <img src="pics/Screenshot_20181112-203003.png" width="325" /> 
+</p>
+

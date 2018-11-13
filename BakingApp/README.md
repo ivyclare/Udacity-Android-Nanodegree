@@ -29,10 +29,9 @@ In this project you will:
   <img src="pics/Screenshot_20181112-202834.png" width="425" />
   <img src="pics/Screenshot_20181112-202842.png" width="425" /> 
 </p>
-<p align="center">
+<p align="left">
   <img src="pics/Screenshot_20181112-202943.png" width="525" /> 
+   <img src="pics/Screenshot_20181112-203003.png" width="525" /> 
 </p>
-<p align="center">
-  <img src="pics/Screenshot_20181112-203003.png" width="525" /> 
-</p>
+
 

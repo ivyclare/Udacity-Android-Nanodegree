@@ -1,9 +1,0 @@
-# Make Your App Material
-
-Make Your App Material is the seventh project in Udacity's Android Developer Nanodegree.
-
-Transformed the user experience of a news reading app using Material Design principles. This includes consistent and meaningful use of Material Design UI components, fonts, color, motion and surfaces
-
-![screenshot_20181112-213534](https://user-images.githubusercontent.com/6892948/48372253-1fbe8b00-e6cf-11e8-9271-5eb177737be6.png)
-
-![screenshot_20181112-213547](https://user-images.githubusercontent.com/6892948/48372282-36fd7880-e6cf-11e8-8007-a12ae12ffc5f.png)

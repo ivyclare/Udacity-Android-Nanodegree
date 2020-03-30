@@ -7,52 +7,51 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".WelcomeFragment" android:tag="layout/fragment_welcome_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
-
-        <Button
-            android:id="@+id/nextButton"
-            android:layout_width="113dp"
-            android:layout_height="wrap_content"
-            android:text="@string/next"
-            android:textColor="#FFF"
-            android:background="#9B1C"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".InstructionsFragment" android:tag="layout/fragment_instructions_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
         <TextView
-            android:id="@+id/welcome"
-            android:layout_width="0dp"
+            android:id="@+id/instruction"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="30dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="8dp"
-            android:paddingTop="30dp"
-            android:text="@string/welcome"
-            android:textAlignment="center"
+            android:textColor="#9B1C31"
+            android:text="@string/instructions"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textSize="32sp"
-            android:textColor="#9B1C31"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/welcomeText"
+            android:id="@+id/instructions"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="60dp"
             android:lines="2"
-            android:text="@string/slogan"
+            android:text="@string/instruction_text"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcome" />
+            app:layout_constraintTop_toBottomOf="@id/instruction" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:text="@string/start"
+            android:textColor="#FFFFFF"
+            android:background="#9B1C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
          

@@ -6,7 +6,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="50dp"
+        android:paddingTop="150dp"
         tools:context=".shoes.ShoeDetailFragment" android:tag="layout/fragment_shoe_detail_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
         <TextView

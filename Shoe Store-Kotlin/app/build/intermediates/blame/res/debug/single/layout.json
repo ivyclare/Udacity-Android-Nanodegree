@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_login.xml",
+        "source": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/res/layout/fragment_login.xml"
+    },
+    {
+        "merged": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_welcome.xml",
+        "source": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/res/layout/fragment_welcome.xml"
+    },
+    {
+        "merged": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_shoe_detail.xml",
+        "source": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/res/layout/fragment_shoe_detail.xml"
+    },
+    {
+        "merged": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/shoe_list_fragment.xml",
+        "source": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/res/layout/shoe_list_fragment.xml"
+    },
+    {
+        "merged": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_instructions.xml",
+        "source": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/res/layout/fragment_instructions.xml"
+    }
+]

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+
+    <string name="create">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="next">Next</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="welcome">Welcome to Shoe Store</string>
+    <string name="slogan">Footwear to last you a lifetime</string>
+    <string name="instructions">Instructions</string>
+    <string name="instruction_text">To add a new item, click on start which will take you to a new page. Press the plus button to add a new shoe and save or cancel if you change your mind</string>
+    <string name="start">Start</string>
+    <string name="shoe_name">Shoe Name</string>
+    <string name="company">Company</string>
+    <string name="size">Shoe Size</string>
+    <string name="description">Description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

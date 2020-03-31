@@ -15,6 +15,8 @@
     </data>
 
 
+<!--    I decided to use ConstraintLayout because it allows you to make large and complex layouts-->
+<!--    with a flat view hierarchy.It is also more flexible compared to Relative and Linear Layouts-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,9 +31,9 @@
             android:text="@string/shoe_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/shoe"
+            app:layout_constraintBottom_toBottomOf="@+id/shoeEdit"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/shoe" />
+            app:layout_constraintTop_toTopOf="@+id/shoeEdit" />
 
         <EditText
             android:id="@+id/shoeEdit"
@@ -73,7 +75,7 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/companyName"
-            app:layout_constraintTop_toBottomOf="@+id/shoe" />
+            app:layout_constraintTop_toBottomOf="@+id/shoeEdit" />
 
         <TextView
             android:id="@+id/sizeLabel"

@@ -1,7 +1,6 @@
 package com.udacity.shoestore
 
 import android.os.Bundle
-import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +8,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
-import timber.log.Timber
+import com.udacity.shoestore.models.ShoeListViewModel
 
 
 /**
@@ -45,8 +43,11 @@ class ShoeDetailFragment : Fragment() {
     }
 
     private fun navigate(view: View) {
-        val action = ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoesListFragment()
-        view.findNavController().navigate(action)
+        //val action = ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoesListFragment()
+        //view.findNavController().navigate(action)
+        //view.findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
+
+        view.findNavController().popBackStack()
     }
 
 

@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.udacity.shoestore.InstructionsFragment;
 import com.udacity.shoestore.R;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -24,12 +26,22 @@ public abstract class FragmentInstructionsBinding extends ViewDataBinding {
   @NonNull
   public final Button nextButton;
 
+  @Bindable
+  protected InstructionsFragment mSelect;
+
   protected FragmentInstructionsBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView instruction, TextView instructions, Button nextButton) {
     super(_bindingComponent, _root, _localFieldCount);
     this.instruction = instruction;
     this.instructions = instructions;
     this.nextButton = nextButton;
+  }
+
+  public abstract void setSelect(@Nullable InstructionsFragment select);
+
+  @Nullable
+  public InstructionsFragment getSelect() {
+    return mSelect;
   }
 
   @NonNull

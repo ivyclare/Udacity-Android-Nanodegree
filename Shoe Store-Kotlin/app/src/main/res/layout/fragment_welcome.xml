@@ -4,6 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--    I decided to use ConstraintLayout because it allows you to make large and complex layouts-->
+    <!--    with a flat view hierarchy.It is also more flexible compared to Relative and Linear Layouts-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

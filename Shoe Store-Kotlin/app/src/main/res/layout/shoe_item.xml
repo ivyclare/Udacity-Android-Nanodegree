@@ -10,8 +10,9 @@
             />
     </data>
 
+    <!--    I decided to use ConstraintLayout because it allows you to make large and complex layouts-->
+    <!--    with a flat view hierarchy.It is also more flexible compared to Relative and Linear Layouts-->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:paddingTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -44,9 +45,10 @@
                 android:text="@={shoe.description}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintHorizontal_bias="0.198"
                 app:layout_constraintStart_toEndOf="@+id/shoeName"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 tools:text="Shoe Description" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

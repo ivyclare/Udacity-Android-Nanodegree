@@ -11,9 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.Barrier;
 import androidx.constraintlayout.widget.Guideline;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.udacity.shoestore.LoginFragment;
 import com.udacity.shoestore.R;
+import com.udacity.shoestore.models.User;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -39,6 +42,12 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   @NonNull
   public final Button signupButton;
 
+  @Bindable
+  protected User mUser;
+
+  @Bindable
+  protected LoginFragment mSelect;
+
   protected FragmentLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Barrier barrier, EditText email, Guideline guideline, Button loginButton, EditText password,
       TextView passwordLabel, Button signupButton) {
@@ -50,6 +59,20 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
     this.password = password;
     this.passwordLabel = passwordLabel;
     this.signupButton = signupButton;
+  }
+
+  public abstract void setUser(@Nullable User user);
+
+  @Nullable
+  public User getUser() {
+    return mUser;
+  }
+
+  public abstract void setSelect(@Nullable LoginFragment select);
+
+  @Nullable
+  public LoginFragment getSelect() {
+    return mSelect;
   }
 
   @NonNull

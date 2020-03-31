@@ -1149,6 +1149,7 @@ id action_context_bar
 id action_divider
 id action_image
 id action_instructionsFragment_to_shoeListFragment
+id action_loginFragment_to_shoesFragment
 id action_loginFragment_to_welcomeFragment
 id action_menu_divider
 id action_menu_presenter
@@ -1312,7 +1313,6 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
-id shoe
 id shoeDescription
 id shoeDetailFragment
 id shoeEdit

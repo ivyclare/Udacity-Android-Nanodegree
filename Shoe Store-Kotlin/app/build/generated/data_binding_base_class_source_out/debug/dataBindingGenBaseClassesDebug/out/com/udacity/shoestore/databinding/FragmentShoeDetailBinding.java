@@ -9,9 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.udacity.shoestore.R;
+import com.udacity.shoestore.models.Shoe;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -46,6 +48,9 @@ public abstract class FragmentShoeDetailBinding extends ViewDataBinding {
   @NonNull
   public final TextView sizeLabel;
 
+  @Bindable
+  protected Shoe mShoe;
+
   protected FragmentShoeDetailBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button cancelButton, EditText company, TextView companyName, EditText description,
       TextView descriptionText, Button saveButton, EditText shoe, TextView shoeName, EditText size,
@@ -61,6 +66,13 @@ public abstract class FragmentShoeDetailBinding extends ViewDataBinding {
     this.shoeName = shoeName;
     this.size = size;
     this.sizeLabel = sizeLabel;
+  }
+
+  public abstract void setShoe(@Nullable Shoe shoe);
+
+  @Nullable
+  public Shoe getShoe() {
+    return mShoe;
   }
 
   @NonNull

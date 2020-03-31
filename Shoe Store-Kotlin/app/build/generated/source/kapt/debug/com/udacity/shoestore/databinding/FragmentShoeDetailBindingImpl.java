@@ -14,14 +14,10 @@ public class FragmentShoeDetailBindingImpl extends FragmentShoeDetailBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.shoeName, 1);
-        sViewsWithIds.put(R.id.shoe, 2);
-        sViewsWithIds.put(R.id.companyName, 3);
-        sViewsWithIds.put(R.id.company, 4);
-        sViewsWithIds.put(R.id.sizeLabel, 5);
-        sViewsWithIds.put(R.id.size, 6);
-        sViewsWithIds.put(R.id.descriptionText, 7);
-        sViewsWithIds.put(R.id.description, 8);
+        sViewsWithIds.put(R.id.shoeName, 5);
+        sViewsWithIds.put(R.id.companyName, 6);
+        sViewsWithIds.put(R.id.sizeLabel, 7);
+        sViewsWithIds.put(R.id.descriptionText, 8);
         sViewsWithIds.put(R.id.cancelButton, 9);
         sViewsWithIds.put(R.id.saveButton, 10);
     }
@@ -32,6 +28,123 @@ public class FragmentShoeDetailBindingImpl extends FragmentShoeDetailBinding  {
     // values
     // listeners
     // Inverse Binding Event Handlers
+    private androidx.databinding.InverseBindingListener companyandroidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
+        @Override
+        public void onChange() {
+            // Inverse of shoe.company
+            //         is shoe.setCompany((java.lang.String) callbackArg_0)
+            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(company);
+            // localize variables for thread safety
+            // shoe
+            com.udacity.shoestore.models.Shoe Shoe1 = mShoe;
+            // shoe.company
+            java.lang.String shoeCompany = null;
+            // shoe != null
+            boolean shoeJavaLangObjectNull = false;
+
+
+
+            shoeJavaLangObjectNull = (Shoe1) != (null);
+            if (shoeJavaLangObjectNull) {
+
+
+
+
+                Shoe1.setCompany(((java.lang.String) (callbackArg_0)));
+            }
+        }
+    };
+    private androidx.databinding.InverseBindingListener descriptionandroidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
+        @Override
+        public void onChange() {
+            // Inverse of shoe.description
+            //         is shoe.setDescription((java.lang.String) callbackArg_0)
+            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(description);
+            // localize variables for thread safety
+            // shoe
+            com.udacity.shoestore.models.Shoe Shoe1 = mShoe;
+            // shoe.description
+            java.lang.String shoeDescription = null;
+            // shoe != null
+            boolean shoeJavaLangObjectNull = false;
+
+
+
+            shoeJavaLangObjectNull = (Shoe1) != (null);
+            if (shoeJavaLangObjectNull) {
+
+
+
+
+                Shoe1.setDescription(((java.lang.String) (callbackArg_0)));
+            }
+        }
+    };
+    private androidx.databinding.InverseBindingListener shoeandroidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
+        @Override
+        public void onChange() {
+            // Inverse of shoe.name
+            //         is shoe.setName((java.lang.String) callbackArg_0)
+            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(shoe);
+            // localize variables for thread safety
+            // shoe
+            com.udacity.shoestore.models.Shoe Shoe1 = mShoe;
+            // shoe.name
+            java.lang.String shoeName = null;
+            // shoe != null
+            boolean shoeJavaLangObjectNull = false;
+
+
+
+            shoeJavaLangObjectNull = (Shoe1) != (null);
+            if (shoeJavaLangObjectNull) {
+
+
+
+
+                Shoe1.setName(((java.lang.String) (callbackArg_0)));
+            }
+        }
+    };
+    private androidx.databinding.InverseBindingListener sizeandroidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
+        @Override
+        public void onChange() {
+            // Inverse of ("") + (shoe.size)
+            //         is shoe.setSize((double) androidx.databinding.ViewDataBinding.parse(callbackArg_0, shoe.size))
+            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(size);
+            // localize variables for thread safety
+            // shoe.size
+            double shoeSize = 0.0;
+            // ("") + (shoe.size)
+            java.lang.String javaLangStringShoeSize = null;
+            // shoe
+            com.udacity.shoestore.models.Shoe Shoe1 = mShoe;
+            // androidx.databinding.ViewDataBinding.parse(callbackArg_0, shoe.size)
+            double androidxDatabindingViewDataBindingParseCallbackArg0ShoeSize = 0.0;
+            // (double) androidx.databinding.ViewDataBinding.parse(callbackArg_0, shoe.size)
+            double doubleAndroidxDatabindingViewDataBindingParseCallbackArg0ShoeSize = 0.0;
+            // shoe != null
+            boolean shoeJavaLangObjectNull = false;
+
+
+
+            shoeJavaLangObjectNull = (Shoe1) != (null);
+            if (shoeJavaLangObjectNull) {
+
+
+
+
+
+                shoeSize = Shoe1.getSize();
+
+                androidxDatabindingViewDataBindingParseCallbackArg0ShoeSize = androidx.databinding.ViewDataBinding.parse(callbackArg_0, shoeSize);
+
+                doubleAndroidxDatabindingViewDataBindingParseCallbackArg0ShoeSize = ((double) (androidxDatabindingViewDataBindingParseCallbackArg0ShoeSize));
+
+                Shoe1.setSize(doubleAndroidxDatabindingViewDataBindingParseCallbackArg0ShoeSize);
+            }
+        }
+    };
 
     public FragmentShoeDetailBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
@@ -39,18 +152,22 @@ public class FragmentShoeDetailBindingImpl extends FragmentShoeDetailBinding  {
     private FragmentShoeDetailBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.Button) bindings[9]
-            , (android.widget.EditText) bindings[4]
-            , (android.widget.TextView) bindings[3]
-            , (android.widget.EditText) bindings[8]
-            , (android.widget.TextView) bindings[7]
-            , (android.widget.Button) bindings[10]
             , (android.widget.EditText) bindings[2]
-            , (android.widget.TextView) bindings[1]
-            , (android.widget.EditText) bindings[6]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.EditText) bindings[4]
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.Button) bindings[10]
+            , (android.widget.EditText) bindings[1]
             , (android.widget.TextView) bindings[5]
+            , (android.widget.EditText) bindings[3]
+            , (android.widget.TextView) bindings[7]
             );
+        this.company.setTag(null);
+        this.description.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.shoe.setTag(null);
+        this.size.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -59,7 +176,7 @@ public class FragmentShoeDetailBindingImpl extends FragmentShoeDetailBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -77,7 +194,22 @@ public class FragmentShoeDetailBindingImpl extends FragmentShoeDetailBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.shoe == variableId) {
+            setShoe((com.udacity.shoestore.models.Shoe) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setShoe(@Nullable com.udacity.shoestore.models.Shoe Shoe) {
+        this.mShoe = Shoe;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.shoe);
+        super.requestRebind();
     }
 
     @Override
@@ -94,14 +226,57 @@ public class FragmentShoeDetailBindingImpl extends FragmentShoeDetailBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String javaLangStringShoeSize = null;
+        java.lang.String ShoeName1 = null;
+        double shoeSize = 0.0;
+        com.udacity.shoestore.models.Shoe Shoe1 = mShoe;
+        java.lang.String shoeCompany = null;
+        java.lang.String shoeDescription = null;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (Shoe1 != null) {
+                    // read shoe.name
+                    ShoeName1 = Shoe1.getName();
+                    // read shoe.size
+                    shoeSize = Shoe1.getSize();
+                    // read shoe.company
+                    shoeCompany = Shoe1.getCompany();
+                    // read shoe.description
+                    shoeDescription = Shoe1.getDescription();
+                }
+
+
+                // read ("") + (shoe.size)
+                javaLangStringShoeSize = ("") + (shoeSize);
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.company, shoeCompany);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.description, shoeDescription);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.shoe, ShoeName1);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.size, javaLangStringShoeSize);
+        }
+        if ((dirtyFlags & 0x2L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.company, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, companyandroidTextAttrChanged);
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.description, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, descriptionandroidTextAttrChanged);
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.shoe, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, shoeandroidTextAttrChanged);
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.size, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, sizeandroidTextAttrChanged);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): shoe
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

@@ -1,0 +1,15 @@
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/InstructionsFragment.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/ShoeListViewModel.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/utils/Converter.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/WelcomeFragment.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/MainActivity.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/ShoeListFragment.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/models/Shoe.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/LoginFragment.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/java/com/udacity/shoestore/ShoeDetailFragment.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/generated/source/navigation-args/debug/com/udacity/shoestore/WelcomeFragmentDirections.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/generated/source/navigation-args/debug/com/udacity/shoestore/InstructionsFragmentDirections.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/generated/source/navigation-args/debug/com/udacity/shoestore/LoginFragmentDirections.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/generated/source/navigation-args/debug/com/udacity/shoestore/ShoeDetailFragmentArgs.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/generated/source/navigation-args/debug/com/udacity/shoestore/ShoeDetailFragmentDirections.kt
+/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/generated/source/navigation-args/debug/com/udacity/shoestore/ShoeListFragmentDirections.kt

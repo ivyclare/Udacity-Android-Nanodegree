@@ -2,8 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_navigation"
-
+    android:id="@+id/navigation"
     app:startDestination="@id/loginFragment">
 
     <fragment
@@ -52,6 +51,11 @@
         android:name="com.udacity.shoestore.ShoeDetailFragment"
         android:label="shoe_detail"
         tools:layout="@layout/fragment_shoe_detail" >
+        <action
+            android:id="@+id/action_shoeDetailFragment_to_shoesListFragment"
+            app:destination="@id/shoeListFragment"
+            />
+
         <argument
             android:name="shoe"
             app:argType="com.udacity.shoestore.models.Shoe" />

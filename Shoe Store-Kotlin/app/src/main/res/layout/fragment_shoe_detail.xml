@@ -3,7 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe"/>
+
+        <import type="com.udacity.shoestore.utils.Converter"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="150dp"
@@ -30,6 +39,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="@string/shoe_name"
+            android:text="@={shoe.name}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/shoeName"
@@ -56,6 +66,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="@string/company"
+            android:text="@={shoe.company}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/companyName"
@@ -82,6 +93,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:hint="@string/size"
+            android:text="@={`` + shoe.size}"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/companyName"
@@ -107,6 +119,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:text="@={shoe.description}"
             android:hint="@string/description"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"

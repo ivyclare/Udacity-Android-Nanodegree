@@ -25,34 +25,33 @@
 17-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:10:9-54
 18        android:supportsRtl="true"
 18-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:11:9-35
-19        android:testOnly="true"
-20        android:theme="@style/AppTheme.NoActionBar" >
-20-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:12:9-52
-21        <activity android:name="com.udacity.shoestore.MainActivity" >
-21-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:14:9-19:20
-21-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:14:19-47
-22            <intent-filter>
-22-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:15:13-18:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:16:17-69
-23-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:16:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:17:17-77
-25-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:17:27-74
-26            </intent-filter>
-27        </activity>
-28
-29        <provider
-29-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
-30            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-30-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
-31            android:authorities="com.udacity.shoestore.lifecycle-process"
-31-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
-32            android:exported="false"
-32-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
-33            android:multiprocess="true" />
-33-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
-34    </application>
-35
-36</manifest>
+19        android:theme="@style/AppTheme.NoActionBar" >
+19-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:12:9-52
+20        <activity android:name="com.udacity.shoestore.MainActivity" >
+20-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:14:9-19:20
+20-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:14:19-47
+21            <intent-filter>
+21-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:15:13-18:29
+22                <action android:name="android.intent.action.MAIN" />
+22-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:16:17-69
+22-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:16:25-66
+23
+24                <category android:name="android.intent.category.LAUNCHER" />
+24-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:17:17-77
+24-->/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/AndroidManifest.xml:17:27-74
+25            </intent-filter>
+26        </activity>
+27
+28        <provider
+28-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+29            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+29-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+30            android:authorities="com.udacity.shoestore.lifecycle-process"
+30-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+31            android:exported="false"
+31-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+32            android:multiprocess="true" />
+32-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/ivoline/.gradle/caches/transforms-2/files-2.1/b74b161c518caa950da1de81b1e37584/lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+33    </application>
+34
+35</manifest>

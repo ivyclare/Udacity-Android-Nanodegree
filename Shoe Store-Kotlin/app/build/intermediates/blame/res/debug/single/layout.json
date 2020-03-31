@@ -12,6 +12,10 @@
         "source": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/res/layout/fragment_shoe_detail.xml"
     },
     {
+        "merged": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/shoe_item.xml",
+        "source": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/res/layout/shoe_item.xml"
+    },
+    {
         "merged": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/shoe_list_fragment.xml",
         "source": "/home/ivoline/AndroidStudioProjects/Udacity-Android-Nanodegree/Shoe Store-Kotlin/app/src/main/res/layout/shoe_list_fragment.xml"
     },

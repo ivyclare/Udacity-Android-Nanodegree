@@ -10,8 +10,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.ShoeItemBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.shoe_list_fragment.*
@@ -20,6 +22,7 @@ import timber.log.Timber
 class ShoeListFragment : Fragment() {
 
     lateinit var shoeListBinding: ShoeListFragmentBinding
+    lateinit var shoeItemBinding: ShoeItemBinding
     val shoeListViewModel: ShoeListViewModel by activityViewModels()
 
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,13 +51,20 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        shoeListBinding = DataBindingUtil.inflate(inflater,
+        val shoeListBinding = DataBindingUtil.inflate<ShoeListFragmentBinding>(inflater,
             R.layout.shoe_list_fragment, container, false)
-
         shoeListBinding.buttonSelect = this
-        val shoesLayout = shoeListBinding.shoeView
-        //        val shoesLayout = shoeListBinding.root.findViewById<LinearLayout>(R.id.shoeView
+        //val shoesLayout = shoeListBinding.shoeView
+        val shoesLayout = shoeListBinding.root.findViewById<LinearLayout>(R.id.shoeView)
+        val shoeListViewModel: ShoeListViewModel by activityViewModels()
 
+//        shoeListViewModel.getShoes().observe(viewLifecycleOwner, Observer<MutableList<Shoe>> { shoes ->
+//            shoes.forEach { shoe ->
+//                val shoeItemBinding = DataBindingUtil.inflate<ShoeItemBinding>(inflater, R.layout.shoe_item, container, false)
+//                shoeItemBinding.shoe = shoe
+//                shoesLayout.addView(shoeItemBinding.root)
+//            }
+//        })
         shoeListViewModel.getShoes().observe(viewLifecycleOwner, Observer<MutableList<Shoe>> { shoes ->
             shoes.forEach { shoe ->
                 val shoeItemBinding = DataBindingUtil.inflate<ShoeItemBinding>(inflater, R.layout.shoe_item, container, false)
@@ -66,6 +76,15 @@ class ShoeListFragment : Fragment() {
 //            findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
 //        }
         return shoeListBinding.root
+    }
+
+    fun addShoe(view: View) {
+        navigate(view)
+    }
+
+    private fun navigate(view: View) {
+        val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment()
+        view.findNavController().navigate(action)
     }
 
 

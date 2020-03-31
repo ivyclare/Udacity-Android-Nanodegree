@@ -8,10 +8,12 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.udacity.shoestore.R;
+import com.udacity.shoestore.ShoeListFragment;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -25,12 +27,22 @@ public abstract class ShoeListFragmentBinding extends ViewDataBinding {
   @NonNull
   public final LinearLayout shoeView;
 
+  @Bindable
+  protected ShoeListFragment mButtonSelect;
+
   protected ShoeListFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
       FloatingActionButton addButton, ScrollView shoeScrollView, LinearLayout shoeView) {
     super(_bindingComponent, _root, _localFieldCount);
     this.addButton = addButton;
     this.shoeScrollView = shoeScrollView;
     this.shoeView = shoeView;
+  }
+
+  public abstract void setButtonSelect(@Nullable ShoeListFragment buttonSelect);
+
+  @Nullable
+  public ShoeListFragment getButtonSelect() {
+    return mButtonSelect;
   }
 
   @NonNull

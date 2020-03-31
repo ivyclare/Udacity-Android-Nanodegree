@@ -13,6 +13,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.udacity.shoestore.R;
+import com.udacity.shoestore.ShoeDetailFragment;
 import com.udacity.shoestore.models.Shoe;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -37,7 +38,7 @@ public abstract class FragmentShoeDetailBinding extends ViewDataBinding {
   public final Button saveButton;
 
   @NonNull
-  public final EditText shoe;
+  public final EditText shoeEdit;
 
   @NonNull
   public final TextView shoeName;
@@ -51,10 +52,13 @@ public abstract class FragmentShoeDetailBinding extends ViewDataBinding {
   @Bindable
   protected Shoe mShoe;
 
+  @Bindable
+  protected ShoeDetailFragment mButtonSelect;
+
   protected FragmentShoeDetailBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button cancelButton, EditText company, TextView companyName, EditText description,
-      TextView descriptionText, Button saveButton, EditText shoe, TextView shoeName, EditText size,
-      TextView sizeLabel) {
+      TextView descriptionText, Button saveButton, EditText shoeEdit, TextView shoeName,
+      EditText size, TextView sizeLabel) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cancelButton = cancelButton;
     this.company = company;
@@ -62,7 +66,7 @@ public abstract class FragmentShoeDetailBinding extends ViewDataBinding {
     this.description = description;
     this.descriptionText = descriptionText;
     this.saveButton = saveButton;
-    this.shoe = shoe;
+    this.shoeEdit = shoeEdit;
     this.shoeName = shoeName;
     this.size = size;
     this.sizeLabel = sizeLabel;
@@ -73,6 +77,13 @@ public abstract class FragmentShoeDetailBinding extends ViewDataBinding {
   @Nullable
   public Shoe getShoe() {
     return mShoe;
+  }
+
+  public abstract void setButtonSelect(@Nullable ShoeDetailFragment button_select);
+
+  @Nullable
+  public ShoeDetailFragment getButtonSelect() {
+    return mButtonSelect;
   }
 
   @NonNull

@@ -2,12 +2,14 @@ package com.udacity.shoestore;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 1, 16}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0012\u0010\u0013\u001a\u00020\u00102\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0016J&\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u0006\u0010\u0018\u001a\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\b\u0010\u0014\u001a\u0004\u0018\u00010\u0015H\u0016J\u0016\u0010\u001c\u001a\u00020\u00102\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00120\u001eH\u0002R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001b\u0010\t\u001a\u00020\n8FX\u0086\u0084\u0002\u00a2\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\f\u00a8\u0006\u001f"}, d2 = {"Lcom/udacity/shoestore/ShoeListFragment;", "Landroidx/fragment/app/Fragment;", "()V", "shoeListBinding", "Lcom/udacity/shoestore/databinding/ShoeListFragmentBinding;", "getShoeListBinding", "()Lcom/udacity/shoestore/databinding/ShoeListFragmentBinding;", "setShoeListBinding", "(Lcom/udacity/shoestore/databinding/ShoeListFragmentBinding;)V", "shoeListViewModel", "error/NonExistentClass", "getShoeListViewModel", "()Lerror/NonExistentClass;", "shoeListViewModel$delegate", "Lerror/NonExistentClass;", "addShoeItem", "", "shoe", "Lcom/udacity/shoestore/models/Shoe;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "showShoes", "shoes", "", "app_debug"})
+@kotlin.Metadata(mv = {1, 1, 16}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018J\u0010\u0010\u0019\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J&\u0010\u001a\u001a\u0004\u0018\u00010\u00182\u0006\u0010\u001b\u001a\u00020\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u001e2\b\u0010\u001f\u001a\u0004\u0018\u00010 H\u0016R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0086.\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001b\u0010\u000f\u001a\u00020\u00108FX\u0086\u0084\u0002\u00a2\u0006\f\n\u0004\b\u0013\u0010\u0014\u001a\u0004\b\u0011\u0010\u0012\u00a8\u0006!"}, d2 = {"Lcom/udacity/shoestore/ShoeListFragment;", "Landroidx/fragment/app/Fragment;", "()V", "shoeItemBinding", "Lcom/udacity/shoestore/databinding/ShoeItemBinding;", "getShoeItemBinding", "()Lcom/udacity/shoestore/databinding/ShoeItemBinding;", "setShoeItemBinding", "(Lcom/udacity/shoestore/databinding/ShoeItemBinding;)V", "shoeListBinding", "Lcom/udacity/shoestore/databinding/ShoeListFragmentBinding;", "getShoeListBinding", "()Lcom/udacity/shoestore/databinding/ShoeListFragmentBinding;", "setShoeListBinding", "(Lcom/udacity/shoestore/databinding/ShoeListFragmentBinding;)V", "shoeListViewModel", "Lcom/udacity/shoestore/ShoeListViewModel;", "getShoeListViewModel", "()Lcom/udacity/shoestore/ShoeListViewModel;", "shoeListViewModel$delegate", "Lkotlin/Lazy;", "addShoe", "", "view", "Landroid/view/View;", "navigate", "onCreateView", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "savedInstanceState", "Landroid/os/Bundle;", "app_debug"})
 public final class ShoeListFragment extends androidx.fragment.app.Fragment {
     @org.jetbrains.annotations.NotNull()
     public com.udacity.shoestore.databinding.ShoeListFragmentBinding shoeListBinding;
     @org.jetbrains.annotations.NotNull()
-    private final error.NonExistentClass shoeListViewModel$delegate = null;
+    public com.udacity.shoestore.databinding.ShoeItemBinding shoeItemBinding;
+    @org.jetbrains.annotations.NotNull()
+    private final kotlin.Lazy shoeListViewModel$delegate = null;
     private java.util.HashMap _$_findViewCache;
     
     @org.jetbrains.annotations.NotNull()
@@ -20,19 +22,17 @@ public final class ShoeListFragment extends androidx.fragment.app.Fragment {
     }
     
     @org.jetbrains.annotations.NotNull()
-    public final error.NonExistentClass getShoeListViewModel() {
+    public final com.udacity.shoestore.databinding.ShoeItemBinding getShoeItemBinding() {
         return null;
     }
     
-    @java.lang.Override()
-    public void onCreate(@org.jetbrains.annotations.Nullable()
-    android.os.Bundle savedInstanceState) {
+    public final void setShoeItemBinding(@org.jetbrains.annotations.NotNull()
+    com.udacity.shoestore.databinding.ShoeItemBinding p0) {
     }
     
-    private final void showShoes(java.util.List<com.udacity.shoestore.models.Shoe> shoes) {
-    }
-    
-    private final void addShoeItem(com.udacity.shoestore.models.Shoe shoe) {
+    @org.jetbrains.annotations.NotNull()
+    public final com.udacity.shoestore.ShoeListViewModel getShoeListViewModel() {
+        return null;
     }
     
     @org.jetbrains.annotations.Nullable()
@@ -42,6 +42,13 @@ public final class ShoeListFragment extends androidx.fragment.app.Fragment {
     android.view.ViewGroup container, @org.jetbrains.annotations.Nullable()
     android.os.Bundle savedInstanceState) {
         return null;
+    }
+    
+    public final void addShoe(@org.jetbrains.annotations.NotNull()
+    android.view.View view) {
+    }
+    
+    private final void navigate(android.view.View view) {
     }
     
     public ShoeListFragment() {

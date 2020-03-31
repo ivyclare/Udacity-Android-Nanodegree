@@ -7,15 +7,25 @@ import com.udacity.shoestore.models.Shoe
 import timber.log.Timber
 import java.util.ArrayList
 
-class ShoeListViewModel: ViewModel() {
-    private var shoeList = listOf<Shoe>()
+//class ShoeListViewModel: ViewModel() {
+//    private var shoeList = listOf<Shoe>()
+//
+//    private val _shoes: MutableLiveData<List<Shoe>> = MutableLiveData()
+//    val shoes: LiveData<List<Shoe>> = _shoes
+//
+//
+//    fun addShoe(shoe: Shoe) {
+//        shoeList = shoeList.plus(shoe)
+//        _shoes.value = shoeList
+//    }
+//}
 
-    private val _shoes: MutableLiveData<List<Shoe>> = MutableLiveData()
-    val shoes: LiveData<List<Shoe>> = _shoes
+class ShoeListViewModel : ViewModel() {
+    private val shoes: MutableLiveData<MutableList<Shoe>> = MutableLiveData()
 
-
-    fun addShoe(shoe: Shoe) {
-        shoeList = shoeList.plus(shoe)
-        _shoes.value = shoeList
+    init {
+        shoes.value = ArrayList()
     }
+
+    fun getShoes(): LiveData<MutableList<Shoe>> = shoes
 }

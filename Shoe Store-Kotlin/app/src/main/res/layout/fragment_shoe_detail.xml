@@ -8,7 +8,10 @@
             name="shoe"
             type="com.udacity.shoestore.models.Shoe"/>
 
-        <import type="com.udacity.shoestore.utils.Converter"/>
+        <variable
+            name="button_select"
+            type="com.udacity.shoestore.ShoeDetailFragment"/>
+
     </data>
 
 
@@ -31,7 +34,7 @@
             app:layout_constraintTop_toTopOf="@+id/shoe" />
 
         <EditText
-            android:id="@+id/shoe"
+            android:id="@+id/shoeEdit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -135,6 +138,7 @@
             android:text="@string/cancel"
             android:textColor="#FFFFFF"
             android:background="#9B1C"
+            android:onClick="@{(view) -> button_select.cancel(view)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -147,6 +151,7 @@
             android:textColor="#FFFFFF"
             android:background="#9B1C"
             android:text="@string/save"
+            android:onClick="@{(view) -> button_select.save(view,shoe)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

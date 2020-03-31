@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
@@ -20,36 +21,34 @@ import timber.log.Timber
 class ShoeDetailFragment : Fragment() {
     lateinit var shoeDetailBinding: FragmentShoeDetailBinding
 
-    val shoeListViewModel: ShoeListViewModel by activityViewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        shoeDetailBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
+        shoeDetailBinding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(inflater, R.layout.fragment_shoe_detail, container, false)
 
-        shoeDetailBinding.saveButton.setOnClickListener {
-            Timber.e("Clicking Save button")
-            shoeListViewModel.addShoe(
-                Shoe(shoeDetailBinding.shoe.text.toString(), shoeDetailBinding.size.text.toDouble(),
-                    shoeDetailBinding.company.text.toString(), shoeDetailBinding.description.text.toString())
-            )
-            findNavController().popBackStack()
-        }
-
-        shoeDetailBinding.cancelButton.setOnClickListener {
-            findNavController().popBackStack()
-        }
+        shoeDetailBinding.buttonSelect = this
+        shoeDetailBinding.shoe = Shoe("", 0.0, "", "")
         return shoeDetailBinding.root
+
     }
-}
+
+    fun cancel(view: View) {
+        navigate(view)
+    }
+
+    fun save(view: View, shoe: Shoe) {
+        navigate(view)
+        val shoeListViewModel: ShoeListViewModel by activityViewModels()
+        shoeListViewModel.getShoes().value?.add(shoe)
+    }
+
+    private fun navigate(view: View) {
+        val action = ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoesListFragment()
+        view.findNavController().navigate(action)
+    }
 
 
-fun Editable.toDouble(): Double {
-    val stringValue = toString()
-    if (stringValue.isEmpty()) {
-        return 0.0
-    }
-    return stringValue.toDouble()
+
 }

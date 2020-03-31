@@ -22,7 +22,7 @@ public class FragmentInstructionsBindingImpl extends FragmentInstructionsBinding
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback6;
+    private final android.view.View.OnClickListener mCallback7;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -41,7 +41,7 @@ public class FragmentInstructionsBindingImpl extends FragmentInstructionsBinding
         this.nextButton.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback6 = new com.udacity.shoestore.generated.callback.OnClickListener(this, 1);
+        mCallback7 = new com.udacity.shoestore.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -103,7 +103,7 @@ public class FragmentInstructionsBindingImpl extends FragmentInstructionsBinding
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.nextButton.setOnClickListener(mCallback6);
+            this.nextButton.setOnClickListener(mCallback7);
         }
     }
     // Listener Stub Implementations

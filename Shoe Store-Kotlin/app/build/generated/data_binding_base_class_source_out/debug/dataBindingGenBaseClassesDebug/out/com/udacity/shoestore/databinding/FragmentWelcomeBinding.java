@@ -8,9 +8,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.udacity.shoestore.R;
+import com.udacity.shoestore.WelcomeFragment;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -24,12 +26,22 @@ public abstract class FragmentWelcomeBinding extends ViewDataBinding {
   @NonNull
   public final TextView welcomeText;
 
+  @Bindable
+  protected WelcomeFragment mSelect;
+
   protected FragmentWelcomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button nextButton, TextView welcome, TextView welcomeText) {
     super(_bindingComponent, _root, _localFieldCount);
     this.nextButton = nextButton;
     this.welcome = welcome;
     this.welcomeText = welcomeText;
+  }
+
+  public abstract void setSelect(@Nullable WelcomeFragment select);
+
+  @Nullable
+  public WelcomeFragment getSelect() {
+    return mSelect;
   }
 
   @NonNull

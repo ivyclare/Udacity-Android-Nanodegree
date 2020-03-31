@@ -846,4 +846,281 @@ variableId
 @ 
 $A 
 C
-&D 
+&D ý   #&20BP*0	0	
+*000*00*00*00J0H²	J020²	H&J  *0020²	HÀ>J@ *0020²	2!0	²	H²	#($À>J%02&0²	H²	À>J8%02&0²	2(0²	2*0H²	À>JX%02&0²	2(0²	2*02!0	²	H²	²	#($À>J?%02&0²	2!0	²	H²	²	#($À>R*00X…²	R0X²	R0X²	R0X²	  Ô
+com
+udacity
+	shoestore
+databinding
+FragmentWelcomeBinding
+androidx
+ViewDataBinding
+_bindingComponent
+kotlin
+Any
+_root
+android
+view
+View
+_localFieldCount
+Int
+
+nextButton
+widget
+Button
+welcome
+TextView
+welcomeText
+mSelect
+WelcomeFragment
+Bindable
+
+annotation
+NonNull
+	getSelect
+Nullable
+	setSelect
+Unit
+select
+bind
+	component
+
+Deprecated
+message
+Deprecated in Java
+inflate
+inflater
+LayoutInflater
+root
+	ViewGroup
+attachToRoot
+Boolean   º
+ 
+ 
+
+
+ 
+
+
+ 
+
+	 
+
+
+
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+" 
+' 
+) 
++ è   m2020	B"
+0²	0²	BF
+*00*00&"
+*00**0000J02!02#*00J$0HJ%0HJ'0HJ&(02)02**002+0HJ,02-0²	HJ!/0200210²	HR0X²	R	0X‚R0X²	R20 X²	À>R50"X²	À>  ½
+com
+udacity
+	shoestore
+databinding
+FragmentInstructionsBindingImpl
+FragmentInstructionsBinding
+	generated
+callback
+OnClickListener
+Listener
+bindingComponent
+androidx
+DataBindingComponent
+
+annotation
+Nullable
+root
+android
+view
+View
+NonNull
+bindings
+kotlin
+Array
+Any
+
+mCallback7
+mDirtyFlags
+Long
+mboundView0
+constraintlayout
+widget
+ConstraintLayout
+_internalCallbackOnClick
+Unit
+sourceId
+Int
+callbackArg_0
+executeBindings
+hasPendingBindings
+Boolean
+invalidateAll
+onFieldChange
+localFieldId
+object
+fieldId
+	setSelect
+Select
+InstructionsFragment
+setVariable
+
+variableId
+variable
+	sIncludes
+ViewDataBinding
+IncludedLayouts
+sViewsWithIds
+util
+SparseIntArray   ò
+ 
+ 
+
+
+ 
+ 
+
+
+ 
+	 
+
+
+
+ 
+
+
+ 
+
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+ 
+  
+" 
+& 
+. 
+3 
+4 
+6
+!7 Ù   m2020	B"
+0²	0²	BF
+*00*00&"
+*00**0000J02!02#*00J$0HJ%0HJ'0HJ&(02)02**002+0HJ,02-0²	HJ!/0200210²	HR0X²	R	0X‚R0X²	R20 X²	À>R50"X²	À>  ®
+com
+udacity
+	shoestore
+databinding
+FragmentWelcomeBindingImpl
+FragmentWelcomeBinding
+	generated
+callback
+OnClickListener
+Listener
+bindingComponent
+androidx
+DataBindingComponent
+
+annotation
+Nullable
+root
+android
+view
+View
+NonNull
+bindings
+kotlin
+Array
+Any
+
+mCallback6
+mDirtyFlags
+Long
+mboundView0
+constraintlayout
+widget
+ConstraintLayout
+_internalCallbackOnClick
+Unit
+sourceId
+Int
+callbackArg_0
+executeBindings
+hasPendingBindings
+Boolean
+invalidateAll
+onFieldChange
+localFieldId
+object
+fieldId
+	setSelect
+Select
+WelcomeFragment
+setVariable
+
+variableId
+variable
+	sIncludes
+ViewDataBinding
+IncludedLayouts
+sViewsWithIds
+util
+SparseIntArray   ò
+ 
+ 
+
+
+ 
+ 
+
+
+ 
+	 
+
+
+
+ 
+
+
+ 
+
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+ 
+  
+" 
+& 
+. 
+3 
+4 
+6
+!7 

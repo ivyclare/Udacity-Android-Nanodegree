@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.View;
 @SuppressWarnings("unchecked")
-public class FragmentWelcomeBindingImpl extends FragmentWelcomeBinding  {
+public class FragmentWelcomeBindingImpl extends FragmentWelcomeBinding implements com.udacity.shoestore.generated.callback.OnClickListener.Listener {
 
     @Nullable
     private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
@@ -14,7 +14,6 @@ public class FragmentWelcomeBindingImpl extends FragmentWelcomeBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.nextButton, 1);
         sViewsWithIds.put(R.id.welcome, 2);
         sViewsWithIds.put(R.id.welcomeText, 3);
     }
@@ -22,6 +21,8 @@ public class FragmentWelcomeBindingImpl extends FragmentWelcomeBinding  {
     @NonNull
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
+    @Nullable
+    private final android.view.View.OnClickListener mCallback6;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -37,15 +38,17 @@ public class FragmentWelcomeBindingImpl extends FragmentWelcomeBinding  {
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.nextButton.setTag(null);
         setRootTag(root);
         // listeners
+        mCallback6 = new com.udacity.shoestore.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -63,7 +66,22 @@ public class FragmentWelcomeBindingImpl extends FragmentWelcomeBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.select == variableId) {
+            setSelect((com.udacity.shoestore.WelcomeFragment) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setSelect(@Nullable com.udacity.shoestore.WelcomeFragment Select) {
+        this.mSelect = Select;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.select);
+        super.requestRebind();
     }
 
     @Override
@@ -80,14 +98,38 @@ public class FragmentWelcomeBindingImpl extends FragmentWelcomeBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        com.udacity.shoestore.WelcomeFragment select = mSelect;
         // batch finished
+        if ((dirtyFlags & 0x2L) != 0) {
+            // api target 1
+
+            this.nextButton.setOnClickListener(mCallback6);
+        }
     }
     // Listener Stub Implementations
     // callback impls
+    public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
+        // localize variables for thread safety
+        // select
+        com.udacity.shoestore.WelcomeFragment select = mSelect;
+        // select != null
+        boolean selectJavaLangObjectNull = false;
+
+
+
+        selectJavaLangObjectNull = (select) != (null);
+        if (selectJavaLangObjectNull) {
+
+
+
+            select.navigate(callbackArg_0);
+        }
+    }
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): select
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

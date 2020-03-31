@@ -4,6 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="select"
+            type="com.udacity.shoestore.WelcomeFragment"
+            />
+    </data>
+
     <!--    I decided to use ConstraintLayout because it allows you to make large and complex layouts-->
     <!--    with a flat view hierarchy.It is also more flexible compared to Relative and Linear Layouts-->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,6 +25,7 @@
             android:text="@string/next"
             android:textColor="#FFF"
             android:background="#9B1C"
+            android:onClick="@{(view) -> select.navigate(view)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

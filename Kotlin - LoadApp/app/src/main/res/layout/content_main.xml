@@ -82,17 +82,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
          />
 
-<!--    <com.udacity.LoadingButton-->
-<!--        android:id="@+id/custom_button"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_margin="20dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:circularProgressColor="@color/colorAccent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:primaryBackgroundColor="@color/colorPrimary"-->
-<!--        app:secondaryBackgroundColor="@color/colorPrimaryDark"-->
-<!--        app:textColor="@android:color/white" />-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

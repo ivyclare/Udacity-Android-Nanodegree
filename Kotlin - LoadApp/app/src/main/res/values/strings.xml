@@ -18,5 +18,12 @@
     <string name="glide">Glide - Image Loading Library by BumpTech</string>
     <string name="download">Download</string>
     <string name="downloading"> Downloading </string>
+    <string name="download_files">Downloading Files</string>
+    <string name="success">File Successfully Downloaded</string>
+    <string name="fail">Failed to Download File</string>
+    <string name="details">View details</string>
+    <string name="file">File: </string>
+    <string name="status">Status: </string>
+    <string name="back">Back</string>
 
 </resources>

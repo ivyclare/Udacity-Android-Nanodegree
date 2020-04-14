@@ -10,8 +10,8 @@ import android.view.View
 import android.view.animation.LinearInterpolator
 import androidx.annotation.StringRes
 import com.udacity.R
-//import com.udacity.utils.dpToPx
-//import com.udacity.utils.spToPx
+import com.udacity.utils.dpToPx
+import com.udacity.utils.spToPx
 import java.util.*
 import kotlin.properties.Delegates
 
@@ -24,7 +24,7 @@ class LoadingButton @JvmOverloads constructor( context: Context, attrs: Attribut
 
     private val circleRect = RectF()
     private val cornerPath = Path()
-//    private val cornerRadius = 4.dpToPx().toFloat()
+    private val cornerRadius = 4.dpToPx().toFloat()
 
     private var textColor = Color.WHITE
     private var primaryBackgroundColor = context.getColor(R.color.colorPrimary)
@@ -88,7 +88,7 @@ class LoadingButton @JvmOverloads constructor( context: Context, attrs: Attribut
 
 
     init {
-//        setPadding(16.dpToPx(), 16.dpToPx(), 16.dpToPx(), 16.dpToPx())
+        setPadding(16.dpToPx(), 16.dpToPx(), 16.dpToPx(), 16.dpToPx())
 
         val typedArray = context.theme.obtainStyledAttributes(
             attrs,
@@ -183,7 +183,7 @@ class LoadingButton @JvmOverloads constructor( context: Context, attrs: Attribut
     private val paint = Paint().apply {
         isAntiAlias = true
         textAlignment = TEXT_ALIGNMENT_CENTER
-//        textSize = 16.spToPx().toFloat()
+        textSize = 16.spToPx().toFloat()
         typeface = Typeface.DEFAULT_BOLD
     }
 
@@ -198,17 +198,17 @@ class LoadingButton @JvmOverloads constructor( context: Context, attrs: Attribut
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-//        cornerPath.reset()
-//        cornerPath.addRoundRect(
-//            0f,
-//            0f,
-//            w.toFloat(),
-//            h.toFloat(),
-//            cornerRadius,
-//            cornerRadius,
-//            Path.Direction.CW
-//        )
-//        cornerPath.close()
+        cornerPath.reset()
+        cornerPath.addRoundRect(
+            0f,
+            0f,
+            w.toFloat(),
+            h.toFloat(),
+            cornerRadius,
+            cornerRadius,
+            Path.Direction.CW
+        )
+        cornerPath.close()
     }
 
     override fun getSuggestedMinimumWidth(): Int {

@@ -37,10 +37,6 @@ class DetailActivity : AppCompatActivity() {
             finish()
         }
 
-//        loadExtras()
-//        clearNotification()
-////        initViews()
-//        initListeners()
     }
 
     private fun loadExtras() {
@@ -51,28 +47,6 @@ class DetailActivity : AppCompatActivity() {
             fileName = it.getString(EXTRA_FILE_NAME)!!
         }
     }
-
-    private fun clearNotification() {
-        NotificationUtils.clearNotification(this, downloadId)
-    }
-
-//    private fun initViews() {
-//        tv_file_name.text = fileName
-//
-//        tv_download_status.text = if (downloadStatus == MainActivity.DownloadStatus.SUCCESS) {
-//            getString(R.string.success)
-//        } else {
-//            getString(R.string.fail)
-//        }
-//
-//        layout_details.transitionToEnd()
-//    }
-
-//    private fun initListeners() {
-//        btn_back.setOnClickListener {
-//            finish()
-//        }
-//    }
 
     companion object {
         private const val EXTRA_DOWNLOAD_ID = "download_id"

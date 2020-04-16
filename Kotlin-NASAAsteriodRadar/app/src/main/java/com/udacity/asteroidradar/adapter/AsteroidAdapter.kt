@@ -7,7 +7,7 @@ import com.udacity.asteroidradar.Asteroid
 import com.udacity.asteroidradar.databinding.AsteroidItemBinding
 
 
-class AsteroidsAdapter(var asteroids:List<Asteroid>,
+class AsteroidAdapter(var asteroids:List<Asteroid>,
                        var onAsteroidClickListener: OnAsteroidClickListener)
     :RecyclerView.Adapter<AsteroidViewHolder>()
 {

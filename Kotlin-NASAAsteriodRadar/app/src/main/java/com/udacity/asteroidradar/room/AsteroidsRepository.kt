@@ -1,26 +1,33 @@
 package com.udacity.asteroidradar.room
 
 import com.udacity.asteroidradar.Asteroid
-import com.udacity.asteroidradar.BuildConfig
-import com.udacity.asteroidradar.utils.TimeUtils
-import com.udacity.asteroidradar.utils.AsteroidWebService
-import timber.log.Timber
+import com.udacity.asteroidradar.PictureOfDay
+import com.udacity.asteroidradar.database.AsteroidDao
+import kotlinx.coroutines.flow.Flow
 
-class AsteroidsRepository(val asteroidDao: AsteroidDao) {
-    private val client:AsteroidWebService
-    get() = AsteroidWebService.create()
+class AsteroidsRepository(asteroidDao: AsteroidDao) {
 
-    suspend fun getAsteroidsFromInternet() = client.getAsteroids(BuildConfig.API_KEY,TimeUtils.getTodayDate())
+    private val localAsteroidsData = LocalAsteroidsData(asteroidDao)
+    private val remoteAsteroidsData = RemoteAsteroidsData()
 
-    suspend fun insertAsteroid(asteroids:ArrayList<Asteroid>) {
-        for (asteroid in asteroids) {
-            Timber.d("Saving... $asteroid")
-            asteroidDao.insertAsteroid(asteroid)
-        }
-    }
+    fun getWeeklyAsteroids(): Flow<List<Asteroid>> =
+        localAsteroidsData.getWeeklyAsteroids()
 
-    fun getAsteroidsLiveData() = asteroidDao.getAllAsteroids()
+    fun getTodayAsteroids(): Flow<List<Asteroid>> =
+        localAsteroidsData.getTodayAsteroids()
 
-    suspend fun getImageOfTheDay() = client.getImageOfTheDay(BuildConfig.API_KEY)
+    fun getSavedAsteroids(): Flow<List<Asteroid>> =
+        localAsteroidsData.getSavedAsteroids()
 
+    suspend fun saveAsteroid(asteroid: Asteroid) =
+        localAsteroidsData.saveAsteroid(asteroid)
+
+    suspend fun deleteOldAsteroids() =
+        localAsteroidsData.deleteOldAsteroids()
+
+    fun getAsteroidsRemotely(startDate: String, endDate: String): Flow<List<Asteroid>> =
+        remoteAsteroidsData.getAsteroids(startDate, endDate)
+
+    fun getImageOfTheDay(): Flow<PictureOfDay> =
+        remoteAsteroidsData.getImageOfTheDay()
 }

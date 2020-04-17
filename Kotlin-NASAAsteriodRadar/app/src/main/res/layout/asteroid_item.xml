@@ -1,61 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="asteroid"
             type="com.udacity.asteroidradar.Asteroid" />
-        <variable
-            name="onAsteroidClickedListener"
-            type="com.udacity.asteroidradar.adapter.OnAsteroidClickListener" />
+
     </data>
 
-    <androidx.cardview.widget.CardView
-        app:cardUseCompatPadding="true"
-        app:cardBackgroundColor="@color/app_background"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:onClick="@{()-> onAsteroidClickedListener.onAsteroidClicked(asteroid)}"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        tools:background="?colorPrimary">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextTitle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            >
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{asteroid.codename}"
+            app:layout_constraintBottom_toTopOf="@+id/tv_date"
+            app:layout_constraintEnd_toStartOf="@+id/iv_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:text="Asteroid Codename" />
 
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:text="@{asteroid.codename}"
-                android:textColor="@android:color/white"
-                android:layout_height="wrap_content"
-                tools:text="Asteroid Name" />
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/TextBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{asteroid.closeApproachDate}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="Asteroid Approach Date" />
 
-            <TextView
-                android:id="@+id/tv_date"
-                android:layout_width="wrap_content"
-                android:textColor="@android:color/white"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_title"
-                android:layout_marginTop="8dp"
-                android:text="@{asteroid.closeApproachDate}"
-                tools:text="Asteroid Approach Date" />
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:statusIcon="@{asteroid.potentiallyHazardous}"
+            tools:srcCompat="@drawable/ic_status_normal" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:id="@+id/imageView"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:contentDescription="@string/img_content"
-                app:statusIcon="@{asteroid.potentiallyHazardous}"
-                android:layout_alignParentEnd="true"
-                tools:src="@drawable/ic_status_normal"
-                android:layout_height="wrap_content"/>
-        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
 </layout>

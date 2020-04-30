@@ -12,7 +12,7 @@
     <string name="astronomical_unit_format">%f au</string>
     <string name="km_unit_format">%f km</string>
     <string name="km_s_unit_format">%f km/s</string>
-    <string name="image_of_the_day">Image of the Day</string>
+    <string name="image_of_the_day">Ivy Image of the Day</string>
     <string name="astronomical_unit_explanation">The astronomical unit (au) is a unit of length, roughly the distance from Earth to the Sun and equal to about 150 million kilometres (93 million miles)</string>
     <string name="not_image">This is not an image.</string>
     <string name="astronomical_unit_explanation_button">Astronomical unit definition</string>

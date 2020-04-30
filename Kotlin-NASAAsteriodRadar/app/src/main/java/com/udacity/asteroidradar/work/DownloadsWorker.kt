@@ -36,6 +36,6 @@ class DownloadsWorker(appContext: Context, params: WorkerParameters) :
     }
 
     companion object {
-        const val WORK_NAME = "AsteroidsDataWorker"
+        const val WORK_NAME = "DownloadsWorker"
     }
 }

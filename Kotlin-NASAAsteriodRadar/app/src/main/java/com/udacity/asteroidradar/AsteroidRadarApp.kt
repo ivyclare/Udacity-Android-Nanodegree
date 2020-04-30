@@ -1,6 +1,7 @@
 package com.udacity.asteroidradar
 
 import android.app.Application
+import android.os.Build
 import androidx.work.*
 import com.udacity.asteroidradar.work.DownloadsWorker
 import kotlinx.coroutines.CoroutineScope
@@ -9,7 +10,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
-class App : Application() {
+class AsteroidRadarApp : Application() {
 
     private val applicationScope = CoroutineScope(Dispatchers.Default)
 
@@ -26,6 +27,7 @@ class App : Application() {
     }
 
     private fun initAsteroidsWorker() {
+
         val constraints = Constraints.Builder()
             .setRequiredNetworkType(NetworkType.CONNECTED)
             .setRequiresCharging(true)
